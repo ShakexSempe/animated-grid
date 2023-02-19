@@ -1,0 +1,101 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #131313;
+  color: #fff;
+  font-family: "Montserrat", sans-serif;
+  padding: 1rem 5vw;
+}
+body header h1 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #353535;
+  font-size: 1rem;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  padding: 0.25rem;
+  color: #f4f4f4;
+  height: 100%;
+  width: 100%;
+  border-radius: 0.25rem;
+  transition: all 0.25s;
+  overflow: hidden;
+  text-transform: capitalize;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  box-shadow: #030814 0 0.25rem 0.5rem, #020814 0 0.075rem 0.175rem;
+}
+.card:hover {
+  cursor: pointer;
+  transform: scale(0.99);
+  color: #fff9;
+  box-shadow: #020814 0 0.35rem 0.175rem, #020814 0 0.175rem 0.5rem;
+}
+
+.animated-grid {
+  height: 85vh;
+  display: grid;
+  gap: 1rem;
+  grid-template-rows: repeat(12, auto);
+}
+@media (min-width: 600px) {
+  .animated-grid {
+    height: 85vh;
+    grid-template-areas: "a b c d" "l a1 a1 e" "k a1 a1 f" "j i h g";
+    grid-template-rows: repeat(4, 1fr);
+    grid-template-columns: 240px auto auto 240px;
+  }
+  .animated-grid .card:nth-child(1) {
+    grid-area: a;
+  }
+  .animated-grid .card:nth-child(2) {
+    grid-area: b;
+  }
+  .animated-grid .card:nth-child(3) {
+    grid-area: c;
+  }
+  .animated-grid .card:nth-child(4) {
+    grid-area: d;
+  }
+  .animated-grid .card:nth-child(5) {
+    grid-area: e;
+  }
+  .animated-grid .card:nth-child(6) {
+    grid-area: f;
+  }
+  .animated-grid .card:nth-child(7) {
+    grid-area: g;
+  }
+  .animated-grid .card:nth-child(8) {
+    grid-area: h;
+  }
+  .animated-grid .card:nth-child(9) {
+    grid-area: i;
+  }
+  .animated-grid .card:nth-child(10) {
+    grid-area: j;
+  }
+  .animated-grid .card:nth-child(11) {
+    grid-area: k;
+  }
+  .animated-grid .card:nth-child(12) {
+    grid-area: l;
+  }
+  .animated-grid .card:last-child {
+    grid-area: a1;
+  }
+}
+
+/*# sourceMappingURL=style.css.map */
