@@ -36,12 +36,29 @@ body header h1 {
   background-position: center;
   background-repeat: no-repeat;
   box-shadow: #030814 0 0.25rem 0.5rem, #020814 0 0.075rem 0.175rem;
+  background-color: #24f393;
+  animation: cardEntrance 700ms ease-out;
+  animation-fill-mode: backwards;
 }
 .card:hover {
   cursor: pointer;
   transform: scale(0.99);
   color: #fff9;
   box-shadow: #020814 0 0.35rem 0.175rem, #020814 0 0.175rem 0.5rem;
+  filter: hue-rotate(90deg);
+  transition: filter 1s;
+}
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: scale(0.3);
+    filter: hue-rotate(180deg);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+    filter: hue-rotate(0deg);
+  }
 }
 
 .animated-grid {
@@ -56,6 +73,10 @@ body header h1 {
     grid-template-areas: "a b c d" "l a1 a1 e" "k a1 a1 f" "j i h g";
     grid-template-rows: repeat(4, 1fr);
     grid-template-columns: 240px auto auto 240px;
+  }
+  .animated-grid .card {
+    --stagger-delay: 100ms;
+    animation-delay: calc(var(--stagger-delay) * var(--i) );
   }
   .animated-grid .card:nth-child(1) {
     grid-area: a;

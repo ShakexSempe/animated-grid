@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
 
 $font-content: 'Montserrat', sans-serif;
+$stagger-delay: 500ms;
+
 * {
     margin: 0;
     padding: 0;
@@ -49,7 +51,26 @@ body {
         color: #fff9;
         box-shadow: rgba(2, 8, 20, 1) 0 .35rem .175rem,
         rgba(2, 8, 20, 1) 0 .175rem .5rem;
+        filter: hue-rotate(90deg);
+        transition: filter 1s;
     }
+
+    background-color: rgb(36, 243, 147);
+    animation: cardEntrance 700ms ease-out;
+    animation-fill-mode: backwards;
+
+        @keyframes cardEntrance {
+            from {
+                opacity: 0;
+                transform: scale(.3);
+                filter: hue-rotate(180deg);
+            }
+            to {
+                opacity: 1;
+                transform: scale(1);
+                filter: hue-rotate(0deg);
+            }
+        }
 }
 
 .animated-grid {
@@ -73,14 +94,20 @@ body {
 
         .card {
             // border: 2px solid blue;
+            --stagger-delay: 100ms;
+            animation-delay: calc(var(--stagger-delay) * var(--i) );
             &:nth-child(1) {
                 grid-area: a;
+                // animation-delay: calc(1 * var(--stagger-d));
             }
             &:nth-child(2) {
                 grid-area: b;
+                // animation-delay: calc(2s * $stagger-delay);
+
             }
             &:nth-child(3) {
                 grid-area: c;
+                
             }
             &:nth-child(4) {
                 grid-area: d;
@@ -113,6 +140,8 @@ body {
                 grid-area: a1;
             }
         }
+
+        
     }
     
 }
